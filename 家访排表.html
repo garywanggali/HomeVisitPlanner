@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ...（meta标签和引入Font Awesome的CSS文件）... -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('截屏2023-10-20 17.26.36.png'); /* 替换为你的图案路径 */
+            background-repeat: repeat; /* 设置背景图案重复 */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .image-container {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9); /* 使用带透明度的背景色，确保文字可读性 */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group .icon {
+            margin-right: 10px;
+        }
+
+        .form-group select,
+        .form-group input[type="text"], 
+        .form-group input[type="password"] {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #4ca3af;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #4572a0;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>家访查询</h2>
+        <form action="login.php" method="post">
+            <div class="form-group">
+                <label for="user-type-select"><i class="fas fa-user icon"></i>用户类型:</label>
+                <select id="user-type-select" name="user-type">
+                    <option value="student">学生/家长</option>
+                    <option value="teacher">老师</option>
+                    <option value="it">IT</option> <!-- 修正此处值为 "it" -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="username"><i class="fas fa-user icon"></i>账号</label>
+                <input type="text" id="username" name="username" required>
+                <input type="submit" value="登录">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
